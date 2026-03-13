@@ -35,6 +35,10 @@ public class Product {
     private LocalDateTime updatedAt;
     
     
+    public Product() {
+		// TODO Auto-generated constructor stub
+	}
+    
  // Constructor with productId
     public Product(Integer productId, String name, String description, BigDecimal price,
                    Integer stock, Category category, LocalDateTime createdAt,
