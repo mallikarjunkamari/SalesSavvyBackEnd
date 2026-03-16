@@ -1,6 +1,5 @@
 package com.kodnest.service;
 
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -8,6 +7,8 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+
+import com.kodnest.entity.User;
 
 @Service
 public class AuthService {
@@ -55,6 +56,11 @@ public class AuthService {
                 .getBody();
 
         return claims.getSubject();
+    }
 
+    // Logout Method (ADD THIS)
+    public void logout(User user) {
+        // If you store JWT tokens in DB you can delete them here
+        System.out.println("User logged out: " + user.getUsername());
     }
 }
